@@ -1,29 +1,34 @@
 import { useState } from 'react';
 import logo from '../assets/logo/jhatpatlog.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const navigate=useNavigate();
+  const navitem=[
+    {name:"Features",link:"#feature"},
+    {name:"partners",link:"#partners"},
+    {name:"Rewards",link:"#rewards"},
+    {name:"Contact",link:"#contact"}
+  ]
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <img src={logo} alt="Jhatpat Booking" className="h-8 w-auto" />
+            <img onClick={()=>navigate('/')} src={logo} alt="Jhatpat Booking" className="h-8 w-auto" />
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="#features" className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors">
-              Features
-            </Link>
-            <Link href="#partners" className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors">
-              Partners
-            </Link>
-            <Link href="#rewards" className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors">
-              Rewards
-            </Link>
-            <Link to="#contact" className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors">
-              Contact
-            </Link>
-          
+         {
+            navitem.map((item, index) => (
+    <Link
+      key={index}
+      to={item.link}
+      className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors"
+    >
+      {item.name}
+    </Link>
+  ))
+         }
           </div>
             <button className="bg-[#FF6B35] hover:bg-[#FF5722] text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
               Get Notified
