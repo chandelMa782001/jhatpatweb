@@ -1,11 +1,17 @@
-import trainImage from '../assets/image/trainImage.png';
-
+import { useState } from 'react';
+import train from '../assets/image/trainImage.png'
 const TrainFeature = () => {
+    const [pnrValue,setPnrValue]=useState('')
+    const handlePnrCheck=(e)=>{
+        e.preventDefault()
+        console.log('Checking Pnr',pnrValue)
+        setPnrValue('')
+    }
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-white py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+         
           <div>
             <span className="text-purple-600 text-sm font-semibold mb-4 inline-block">
               Train Bookings
@@ -16,8 +22,6 @@ const TrainFeature = () => {
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
               Book train tickets and check PNR status instantly. Get live updates on your journey.
             </p>
-
-            {/* Features List */}
             <div className="space-y-4">
               <div className="flex items-start gap-4 bg-purple-50 rounded-lg p-5">
                 <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
@@ -32,7 +36,6 @@ const TrainFeature = () => {
                   </p>
                 </div>
               </div>
-
               <div className="flex items-start gap-4 bg-purple-50 rounded-lg p-5">
                 <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,39 +66,32 @@ const TrainFeature = () => {
               </div>
             </div>
           </div>
-
-          {/* Right Card */}
           <div className="relative">
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-              {/* Train Image Header */}
               <div className="relative h-32">
                 <img 
-                  src={trainImage} 
+                  src={train} 
                   alt="Train Interior" 
                   className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* PNR Status Card */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Check PNR Status</h3>
-
-                {/* PNR Input */}
                 <div className="mb-6">
                   <label className="text-gray-600 text-sm mb-2 block">PNR Number</label>
                   <div className="flex gap-2">
                     <input 
+                    value={pnrValue}
+                    onChange={(e)=>setPnrValue(e.target.value)}
                       type="text" 
                       placeholder="Enter 10-digit PNR"
                       className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                     />
-                    <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    <button onClick={handlePnrCheck} className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                       Check
                     </button>
                   </div>
                 </div>
-
-                {/* PNR Result */}
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-3">
                     <p className="text-gray-600 text-sm">PNR: 1234567890</p>
@@ -103,10 +99,8 @@ const TrainFeature = () => {
                       Confirmed
                     </span>
                   </div>
-
                   <h4 className="text-lg font-bold text-gray-900 mb-1">Rajdhani Express</h4>
                   <p className="text-gray-600 text-sm mb-4">12301 • AC 2-Tier (A1)</p>
-
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
                       <p className="text-gray-500 text-xs mb-1">From</p>
@@ -119,7 +113,6 @@ const TrainFeature = () => {
                       <p className="text-gray-600 text-sm">17 Feb, 8:35 AM</p>
                     </div>
                   </div>
-
                   <div className="bg-pink-50 rounded-lg p-3">
                     <p className="text-gray-900 text-sm">
                       <span className="font-semibold">Berth:</span> 24 (Lower) • Coach A1

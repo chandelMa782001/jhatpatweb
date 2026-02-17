@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <img onClick={()=>navigate('/')} src={logo} alt="Jhatpat Booking" className="h-8 w-auto" />
+            <img onClick={()=>navigate('/')} src={logo} alt="Jhatpat Booking" className="h-[45px] w-[145px]" />
           </div>
           <div className="hidden md:flex items-center space-x-8">
          {
@@ -23,14 +23,14 @@ const Navbar = () => {
     <Link
       key={index}
       to={item.link}
-      className="text-gray-700 hover:text-gray-900 text-sm font-medium transition-colors"
+      className="text-gray-700 hover:text-gray-900 text-base font-medium transition-colors"
     >
       {item.name}
     </Link>
   ))
          }
           </div>
-            <button className="bg-[#FF6B35] hover:bg-[#FF5722] text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+            <button className="bg-[#FF6B35] hidden md:block hover:bg-[#FF5722] text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
               Get Notified
             </button>
           <div className="md:hidden">
@@ -63,9 +63,6 @@ const Navbar = () => {
               <Link to="#contact" className="text-gray-700 hover:text-gray-900 text-sm font-medium">
                 Contact
               </Link>
-              <button className="bg-[#FF6B35] hover:bg-[#FF5722] text-white px-6 py-2 rounded-lg text-sm font-medium w-full">
-                Get Notified
-              </button>
             </div>
           </div>
         )}

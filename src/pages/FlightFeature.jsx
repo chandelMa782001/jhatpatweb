@@ -1,13 +1,14 @@
+import flight from '../assets/image/flightImage.png'
 const FlightFeature = () => {
   return (
-    <section className="bg-gray-50 py-16 px-4">
+    <section className="bg-gray-50 py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="relative">
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
               <div className="relative h-32 bg-gradient-to-r from-teal-500 via-blue-400 to-orange-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800" 
+                  src={flight}
                   alt="Flight Window View" 
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -16,23 +17,23 @@ const FlightFeature = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex justify-between gap-4 mb-6">
-                  <div>
+                <div className="flex justify-between items-center gap-2 sm:gap-4 mb-6">
+                  <div className="flex-1">
                     <p className="text-gray-500 text-xs mb-2">From</p>
-                    <h4 className="text-3xl font-bold text-gray-900">DEL</h4>
-                    <p className="text-gray-600 text-sm">New Delhi</p>
+                    <h4 className="text-2xl sm:text-3xl font-bold text-gray-900">DEL</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">New Delhi</p>
                   </div>
-                  <div className="flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
-                      <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </div>
                   </div>
-                  <div className="">
+                  <div className="flex-1 text-right">
                     <p className="text-gray-500 text-xs mb-2">To</p>
-                    <h4 className="text-3xl font-bold text-gray-900">BOM</h4>
-                    <p className="text-gray-600 text-sm">Mumbai</p>
+                    <h4 className="text-2xl sm:text-3xl font-bold text-gray-900">BOM</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">Mumbai</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-gray-200">
@@ -55,8 +56,6 @@ const FlightFeature = () => {
                     </div>
                   </div>
                 </div>
-
-      
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
                   <div className="flex items-center justify-between">
                     <div>
@@ -69,15 +68,12 @@ const FlightFeature = () => {
                     </span>
                   </div>
                 </div>
-
-        
                 <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
                   Search Flights
                 </button>
               </div>
             </div>
           </div>
-
           <div>
             <span className="text-orange-500 text-sm font-semibold mb-4 inline-block">
               Flight Bookings
@@ -88,8 +84,6 @@ const FlightFeature = () => {
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
               Compare fares from multiple airlines and book domestic & international flights with ease.
             </p>
-
-   
             <div className="space-y-4">
               <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-2">Real-time Fare Comparison</h4>
@@ -97,7 +91,6 @@ const FlightFeature = () => {
                   Get the best deals from all major airlines in one place
                 </p>
               </div>
-
               <div className="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
                 <h4 className="font-semibold text-gray-900 mb-2">Simple Booking Flow</h4>
                 <p className="text-gray-600 text-sm">

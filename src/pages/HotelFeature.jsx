@@ -1,9 +1,9 @@
 import hotelImage from '../assets/image/hotelmage.png';
 const HotelFeature = () => {
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-white py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <span className="text-blue-600 text-sm font-semibold mb-4 inline-block">
               Hotels & Stays
