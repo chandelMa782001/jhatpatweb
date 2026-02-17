@@ -1,4 +1,4 @@
-import flight from '../assets/image/flightImage.png'
+import flight from '../assets/image/FlightImage.png'
 const FlightFeature = () => {
   return (
     <section className="bg-gray-50 py-12 sm:py-16 px-4">
